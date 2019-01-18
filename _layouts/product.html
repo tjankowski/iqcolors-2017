@@ -18,7 +18,7 @@
         <span class="product__cart" v-bind:class="{ product__cart_visible: product }"><a href="/koszyk.html" v-if="product">${product.count} w koszyku</a></span>
         <div class="product__images">
             {% for image in page.images %}
-                <a href="{{ image }}" target="_blank" class="product__image_{{ forloop.index0 }} product__image"
+                <a href="{{ image | absolute_url }}" target="_blank" class="product__image_{{ forloop.index0 }} product__image"
                    style='background-image: url("/{{ image }}")'></a>
             {% endfor %}
             <button class="product__image-navigation product__image-navigation_prev">
