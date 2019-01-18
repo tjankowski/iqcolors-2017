@@ -1,0 +1,24 @@
+---
+layout: default
+permalink: /pomoce-dydaktyczne/index.html
+---
+<section class="section">
+    <h1 class="section__header">Produkty</h1>
+    <div class="section__line"></div>
+    {% assign categories =  site.products | map: 'categories' | uniq | sort %}
+    <div class="filter-wrapper">
+    <ul id="filter" class="filter">
+        <label class="filter__label">Kategorie</label>
+        {% for category in categories %}
+            <li class="filter__item" v-bind:class="[filters.includes('{{ category }}')? 'filter__item_selected' : '']" v-on:click.prevent="filter('{{category}}')"><a href="">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+    <div class="tiles">
+        <div class="tiles__row">
+            {% for product in site.products %}
+            {% include tile_vertical.html content=product %}
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</section>

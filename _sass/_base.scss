@@ -1,0 +1,39 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #444444;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: $pink;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    background: gray;
+}
+
+button:focus {
+    outline:0;
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    body {
+        background: top right url("/assets/images/background.svg") no-repeat;
+        background-attachment: fixed;
+    }
+
+    body.no-background {
+        background: none;
+    }
+}
+
+.hide {
+    display: none;
+}

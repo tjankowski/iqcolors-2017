@@ -1,0 +1,317 @@
+@import 'content';
+
+$transition: all .5s ease;
+$transformTransition: transform 2s ease;
+
+.product {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        color: $black;
+        font-family: $header;
+        font-size: 2em;
+        font-weight: bold;
+        padding: .5em .625em .25em;
+    }
+
+    &__sub-header {
+        font-family: $sub-header;
+        font-size: 1.25em;
+        padding: 0 1em;
+    }
+
+
+    &__images {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        width: 100vw;
+    }
+
+    &__image {
+        margin: 1.5em 0 1.5em 1.5em ;
+        flex: 0 0 auto;
+        background: no-repeat center center;
+        background-size: cover;
+        height: 35vh;
+        width: 85vw;
+        box-shadow: 1px 1px 1.5em rgba(170, 170, 170, .5);
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__image-navigation {
+        display: none
+    }
+
+    &__price {
+        flex-grow: 2;
+    }
+
+    &__order-icon {
+        height: 1em;
+    }
+
+
+    &__cart {
+        display: block;
+        opacity: 0;
+        order: 1;
+        min-height: 2rem;
+        text-align: center;
+        padding: .5rem 1.25rem;
+        color: $gray;
+        font-family: "Alegreya Sans SC", sans-serif;
+
+        &_visible {
+            opacity: 1;
+        }
+    }
+
+     &__order {
+         color: $pink;
+         border: none;
+         font-family: 'Quicksand', sans-serif;
+         text-align: left;
+         position: fixed;
+         bottom: 0;
+         background: white;
+         padding: 1.5rem 2rem;
+         width: 100vw;
+         box-shadow: 1px 1px 24px rgba(170, 170, 170, .5);
+         overflow: hidden;
+
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         cursor: pointer;
+         z-index: 10;
+    }
+
+    &__order_done {
+
+
+        .product__order-icon {
+            animation: .5s order-done;
+        }
+
+    }
+
+    @keyframes order-done {
+        0% {
+        }
+
+        25% {
+            transform: translateX(2em);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0;
+            transform: translateX(-2em);
+
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__content {
+        order: 2;
+        position: relative;
+        padding-bottom: 4rem;
+
+        @include content();
+    }
+
+    &__content-background {
+        position: absolute;
+        width: 30vw;
+        height: 30vw;
+        background: $purple;
+        opacity: .2;
+        top: 30vh;
+        z-index: -10;
+    }
+
+}
+
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .product {
+
+        > header {
+            padding: 6em 0 2em;
+            width: 60vw;
+        }
+
+        &__header {
+            font-size: 3em;
+            font-weight: bold;
+            padding: 0 1em .25em;
+        }
+
+        &__sub-header {
+            font-size: 1.5em;
+            padding: 0 2em;
+        }
+
+        &__images {
+            cursor: zoom-in;
+            position: fixed;
+            z-index: 2;
+            top:0;
+            left: 60vw;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        &__image {
+            cursor: zoom-in;
+            position: absolute;
+            top: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            height: 100vh;
+            width: 60vw;
+            box-shadow: inset 10px 0 1.5em -10px rgba(170, 170, 170, .5);
+            background: no-repeat center center;
+            background-size: cover;
+
+            @for $i from 0 to 10 {
+                &_#{$i} {
+                    top: $i*100vh
+                }
+            }
+        }
+
+        &__image-navigation {
+            cursor: pointer;
+            z-index: 3;
+            position: fixed;
+            width: 4rem;
+            height: 4rem;
+            border: none;
+            background: $white;
+        }
+
+        &__image-navigation:hover {
+            box-shadow: 1px 1px 24px rgba(170, 170, 170, .8);
+        }
+
+        &__image-navigation_next {
+            display: inline-block;
+            bottom: 0;
+            right: 0;
+            & > svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        &__image-navigation_prev {
+            top: 0;
+            right: 0;
+            & > svg {
+                transform: rotate(-90deg);
+            }
+        }
+
+        &__image-preview-close {
+            cursor: pointer;
+            z-index: 3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 4rem;
+            height: 4rem;
+            border: none;
+            background: $white;
+        }
+
+        &__cart {
+            text-align: left;
+            margin-left: 3em;
+            padding: .5rem 2rem;
+        }
+
+        &__order {
+            position: relative;
+            background: white;
+            margin-left: 3em;
+            padding: 1.5rem 2rem;
+            width: 60vw;
+            box-shadow: 1px 1px 24px rgba(170, 170, 170, .8);
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            transition: $transition;
+
+            &::before {
+                content: "";
+                background: linear-gradient(to bottom, #4800AC, #FF0080);
+                width: 4px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &:hover {
+                box-shadow: 1px 1px 24px rgba(170, 170, 170, .8);
+                transform: perspective(1px) scale(1.01);
+            }
+        }
+
+        &__content {
+            width: 60vw;
+            padding: 4em 0;
+        }
+
+        &__content-background {
+            display: none;
+        }
+
+    }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .product {
+
+        > header {
+            padding: 6em 0 2em;
+            width: 40vw;
+        }
+
+        &__order {
+            width: 40vw;
+            transition: $transition;
+        }
+
+        &__images {
+            left: 40vw;
+
+            &:hover {
+                .product__image {
+                }
+            }
+        }
+
+        &__image {
+            transition: transform 2s ease;
+        }
+
+        &__content {
+            transition: $transition, $transformTransition;
+            width: 40vw;
+        }
+
+    }
+}

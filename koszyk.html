@@ -1,0 +1,88 @@
+---
+layout: no_cart
+permalink: /koszyk
+---
+<section class="section">
+    <h1 class="section__header">Twoje zamówienie</h1>
+    <div class="section__line"></div>
+    <form id="cart" v-bind:style="dataLoaded" @submit.prevent="submitOrder">
+
+        <div class="page" v-if="Object.keys(order).length === 0">
+            <div v-if="orderCompleted">
+                <p class="verticalPadding">
+                    Dziękujemy,<br/>
+                    otrzymaliśmy Twoje zamówienie i zajmujemy się jego przetwarzaniem. Na Twój adres email została wysłana wiadomość potwierdzająca złożenie zamówienia.
+                    Przygotujemy dla Ciebie dokładną wycenę zamówienia uzwzględniając koszty dostawy oraz ewentualne rabaty i prześlemy na podany adres email z prośbą o potwierdzenie i zaakceptowanie zamówienia. Jeżeli wolisz możemy skontaktować się z Tobą telefonicznie na podany numer telefonu.
+                </p>
+            </div>
+            <div v-if="orderFailed">
+                <p class="verticalPadding">
+                    Nie udało się złożyć zamówienia. Spróbuj jeszcze raz. W razie problemów skontaktuj się z nami mailowo kontakt@iqcolors.com lub telefonicznie.
+                </p>
+            </div>
+            <p class="verticalPadding">
+                Twoj koszyk jest pusty. Sprawdź nasze produkty <a href="\products.html">tutaj</a>.
+            </p>
+        </div>
+        <ul v-else class="order">
+            <h3>Podsumowanie</h3>
+            <li class="order__item" v-for="(value, key, index) in order">
+                <a class="order__item-name" v-bind:href="value.url">
+                    ${ value.name }
+                </a>
+                <button type="button" v-on:click="removeItem(value.id)" class="order__item-count-modifier">–</button>
+                <input type="text" name="count" min="1" class="order__item-count" v-model:value="value.count" required/>
+                <button type="button" v-on:click="addItem(value.id)" class="order__item-count-modifier">+</button>
+                <span class="order__item-price">
+                    ${prices[key]}
+                </span>
+                <button type="button" v-on:click="cancelItem(value.id)" class="order__item-remove">
+                    {% include close.html %}
+                </button>
+            </li>
+            <li class="order__item order__item_summary">
+                Wartość całkowita
+                <span class="order__item-price order__item-price_summary">${ sum }</span>
+            </li>
+        </ul>
+        <div v-if="Object.keys(order).length !== 0" class="customer-form">
+            <h3>Dane kontaktowe</h3>
+            {% include form_row.html label="Imię i nazwisko" name="name" type="text" model="name" %}
+            {% include form_row.html label="Email" name="email" type="email" model="email" %}
+            {% include form_row.html label="Telefon kontaktowy" name="phone" type="tel" model="phone" %}
+            <h3>Nabywca</h3>
+            {% include form_row.html label="Nazwa" name="name" type="text" model="customer.name" %}
+            {% include form_row.html label="Adres" name="address" type="text" model="customer.address" %}
+            {% include form_row.html label="Kod pocztowy" name="zip" type="text" model="customer.zip" %}
+            {% include form_row.html label="Miasto" name="city" type="text" model="customer.city" %}
+            {% include form_row.html label="NIP" name="nip" type="text" model="customer.nip" %}
+            <h3>Odbiorca</h3>
+            <div class="form-row form-row_inline">
+                <input id="sameReceiver" name="sameReceiver" type="checkbox" v-model:value="differentReceiver" />
+                <label for="sameReceiver">Odbiorca inny niż nabywca</label>
+            </div>
+            <div v-if="differentReceiver">
+            {% include form_row.html label="Nazwa" name="name" type="text" model="receiver.name" %}
+            {% include form_row.html label="Adres" name="address" type="text" model="receiver.address" %}
+            {% include form_row.html label="Kod pocztowy" name="zip" type="text" model="receiver.zip" %}
+            {% include form_row.html label="Miasto" name="city" type="text" model="receiver.city" %}
+            </div>
+            <div v-else>
+                {% include form_row.html label="Nazwa" name="name" type="text" model="customer.name" disabled=true %}
+                {% include form_row.html label="Adres" name="address" type="text" model="customer.address" disabled=true %}
+                {% include form_row.html label="Kod pocztowy" name="zip" type="text" model="customer.zip" disabled=true %}
+                {% include form_row.html label="Miasto" name="city" type="text" model="customer.city" disabled=true %}
+            </div>
+            <div class="form-row form-row_inline">
+                <input id="regulations" name="regulations" type="checkbox" v-model:value="regulations" required/>
+                <label for="regulations">Akceptuję <a href="/regulamin-sklepu">regulamin</a> i zezwalam na przesłanie do mnie oferty sprzedażowej</label>
+            </div>
+            <button type="submit" class="customer-form__order">
+                <span class="product__price">Potwierdź zamówienie ${ sum } zł</span>
+                {% include arrow.html class="product__order-icon" %}
+            </button>
+        </div>
+    </form>
+
+
+</section>

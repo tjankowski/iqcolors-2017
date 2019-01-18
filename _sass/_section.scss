@@ -1,0 +1,32 @@
+.section {
+
+    &__line {
+        height: 1px;
+        width: 75%;
+        background-image: linear-gradient(to right, #4800AC, #FF0080);
+    }
+
+    &__header {
+        font-size: 2em;
+        line-height: 1.125em;
+        padding: 1em 1em .5em;
+    }
+}
+
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .section {
+
+        &__line {
+            height: 1px;
+            width: 65%;
+            background-image: linear-gradient(to right, #4800AC, #FF0080);
+        }
+
+        &__header {
+            font-size: 2em;
+            line-height: 1.125em;
+            padding: 1em 1.5em;
+        }
+    }
+}

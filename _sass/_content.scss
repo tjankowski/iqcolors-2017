@@ -1,0 +1,54 @@
+@mixin content() {
+    & h1 {
+        color: $black;
+        font-family: $header;
+        font-size: 2em;
+        line-height: 1;
+        font-weight: bold;
+        padding: 1em 0;
+    }
+
+    & h2 {
+        font-family: $sub-header;
+        font-size: 1.25em;
+        line-height: 1;
+        padding: 1em 0 .5em;
+    }
+
+
+    & h3 {
+        font-family: $header;
+        font-weight: bold;
+        font-size: 1.125em;
+        line-height: 1;
+        padding: 1em 0 .5em;
+    }
+
+    & section, p {
+        padding: .5em 2em;
+        line-height: 1.6em;
+    }
+
+    & section.verticalPadding, p.verticalPadding {
+        padding: .5em 0;
+    }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        & section, p {
+            padding: .5em 4em;
+        }
+    }
+
+    & section > p:first-child {
+        padding: 0;
+    }
+
+    & section > p {
+        padding: .5em 0 0 0;
+    }
+
+    & ul {
+        list-style: disc;
+        padding-left: 2em;
+    }
+}

@@ -1,0 +1,20 @@
+<nav class="navigation">
+    <a href="/" name="Home page"><img alt="logo" class="logo" src="/assets/images/logo3.svg"></a>
+    <div class="navigation__handler">
+        <img alt="Menu" class="navigation__menu" src="/assets/images/menu.svg">
+        <span class="navigation__label">Menu</span>
+    </div>
+    <ul class="navigation__items">
+        <li class="navigation__item"><a href="/pomoce-dydaktyczne">Pomoce dydaktyczne</a></li>
+        <li class="navigation__item"><a href="/blog">Blog</a></li>
+        <li class="navigation__item"><a href="">O nas</a></li>
+        <li class="navigation__item"><a href="/kontakt">Kontakt</a></li>
+        <span class="navigation__close">{% include close.html %}</span>
+    </ul>
+    {% unless include.noCart %}
+    <a href="/koszyk" class="cart">
+        {% include cart.html %}
+    </a>
+    {% endunless %}
+    <span class="navigation__view">Witaj</span>
+</nav>

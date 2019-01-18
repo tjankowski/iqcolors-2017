@@ -1,0 +1,15 @@
+---
+layout: default
+permalink: /blog
+---
+<section class="section">
+    <h1 class="section__header">Blog</h1>
+    <div class="section__line"></div>
+    <div class="tiles">
+        <div class="tiles__row">
+            {% for post in site.posts %}
+            {% include tile_horizontal.html content=post %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

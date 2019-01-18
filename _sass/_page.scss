@@ -1,0 +1,31 @@
+@import 'content';
+
+.page {
+    @include content();
+
+    & h2 {
+        font-family: $header;
+    }
+
+
+    & h3 {
+        font-family: $sub-header;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    li {
+        > ol {
+          margin-left: 2em;
+        }
+    }
+
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .page {
+        width: 50vw;
+    }
+}

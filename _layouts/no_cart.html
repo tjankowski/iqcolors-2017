@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    {% include head.html %}
+</head>
+<body id="body">
+{% include navigation.html noCart=true %}
+<main>
+    {{ content }}
+</main>
+{% include footer.html %}
+{% include scripts.html %}
+</body>
+</html>

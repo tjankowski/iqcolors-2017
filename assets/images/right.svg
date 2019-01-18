@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="20px" viewBox="0 0 25 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Arrow/right</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#4800AC" offset="0%"></stop>
+            <stop stop-color="#FF0080" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Produkt" transform="translate(-496.000000, -470.000000)" fill="url(#linearGradient-1)">
+            <g id="Group-2">
+                <g transform="translate(2.000000, 440.000000)">
+                    <g id="Arrow/right" transform="translate(494.000000, 30.000000)">
+                        <polygon id="Fill-19" points="12.9991658 18.3891131 21.2607366 10.8458582 0.915129151 10.8458582 0.915129151 8.9407556 20.9829293 8.9407556 12.9276798 1.38763868 14.2365125 0 24.9594096 10.0534191 14.2864946 19.7964758"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

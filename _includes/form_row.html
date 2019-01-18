@@ -1,0 +1,4 @@
+<div class="form-row">
+    <label for="{{ include.name }}">{{ include.label }}</label>
+    <input name="{{ include.name }}" type="{{ include.type }}" v-model:value="{{ include.model }}" :disabled="{{ include.disabled | default: false }}" required/>
+</div>

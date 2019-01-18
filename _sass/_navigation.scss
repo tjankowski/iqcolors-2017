@@ -1,0 +1,141 @@
+.logo {
+    display: none;
+    width: 2.5rem;
+    transition: transform 1s ease;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.cart {
+    position: fixed;
+    top: calc(50% - 2rem);
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+    background: white;
+    padding: 1.25rem;
+    cursor: pointer;
+    z-index: 300;
+    box-shadow: 1px 1px 24px rgba(170, 170, 170, .5);
+
+    & > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.navigation {
+    font-size: 1.125rem;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__handler {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    &__menu {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__label {
+        font-size: 1rem;
+        padding: 0 .2rem;
+    }
+
+    &__view {
+        position: absolute;
+        left: 0;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &__close {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    &__close-icon:hover {
+        fill: $pink;
+    }
+
+    &__items {
+        z-index: 500;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem 1rem;
+        background: $white;
+        position: fixed;
+        list-style: none;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__item {
+        color: $dark-gray;
+        transition: color .4s ease;
+        padding: 1rem 1rem;
+
+        &:hover {
+            color: $pink;
+        }
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .logo {
+        display: inline;
+    }
+    .navigation {
+        font-size: 1rem;
+        padding: 2rem 3rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        &__handler {
+            display: none;
+        }
+
+        &__view {
+            display: none;
+        }
+
+        &__close {
+            display: none;
+        }
+
+        &__items {
+            z-index: 0;
+            display: flex;
+            visibility: visible;
+            opacity: 1;
+            padding: 0;
+            background: none;
+            position: static;
+            list-style: none;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        &__item {
+            margin-left: 1rem;
+        }
+    }
+}

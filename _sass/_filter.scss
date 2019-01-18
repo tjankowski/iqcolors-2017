@@ -1,0 +1,55 @@
+.filter-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    padding: 2rem 0;
+    display: none;
+
+    &__label {
+        display: none;
+        font-family: "Alegreya Sans SC", sans-serif;
+        font-size: 1.125em;
+        font-weight: bold;
+    }
+
+    &__item {
+        color: $dark-gray;
+        margin-left: 1em;
+        font-family: "Alegreya Sans SC", sans-serif;
+        font-size: 1.125em;
+
+        &_selected {
+            color: $pink;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover {
+        }
+    }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+    .filter-wrapper {
+        flex-direction: row;
+    }
+
+    .filter {
+        display: flex;
+        padding: 3em 0 0 3em;
+        flex-direction: column;
+
+        &__label {
+            display: block;
+        }
+
+        &__item {
+            margin-top: .5em;
+            margin-left: 0;
+        }
+    }
+}

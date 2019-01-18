@@ -1,0 +1,38 @@
+{
+  customer: {
+    name: '',
+    address: '',
+    zip: '',
+    city: '',
+    nip: ''
+  },
+  receiver: {
+    name: '',
+    address: '',
+    zip: '',
+    city: '',
+
+  },
+  name: '',
+  phone: '',
+  email: '',
+  sum: 0,
+  products: [
+    {
+      "id": "Cegiełki magnetyczne",
+      "name": "Cegiełki magnetyczne",
+      "price": "46.00",
+      "url": "/products/cegielki-magnetyczne",
+      "count": 6,
+      "sum": 0
+    },
+    {
+      "id": "Kratka - Nakładka magnetyczna",
+      "name": "Kratka - Nakładka magnetyczna",
+      "price": "46.00",
+      "url": "/products/kratka-nakladka-magnetyczna",
+      "count": 1,
+      "sum": 0
+    }
+  ]
+}
