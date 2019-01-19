@@ -21,7 +21,7 @@ permalink: /koszyk
                 </p>
             </div>
             <p class="verticalPadding">
-                Twoj koszyk jest pusty. Sprawdź nasze produkty <a href="\products.html">tutaj</a>.
+                Twoj koszyk jest pusty. Sprawdź nasze produkty <a href="{{ '\products.html' | relative_url }}">tutaj</a>.
             </p>
         </div>
         <ul v-else class="order">
@@ -75,7 +75,7 @@ permalink: /koszyk
             </div>
             <div class="form-row form-row_inline">
                 <input id="regulations" name="regulations" type="checkbox" v-model:value="regulations" required/>
-                <label for="regulations">Akceptuję <a href="/regulamin-sklepu">regulamin</a> i zezwalam na przesłanie do mnie oferty sprzedażowej</label>
+                <label for="regulations">Akceptuję <a href="{{ '/regulamin-sklepu' | relative_url }}">regulamin</a> i zezwalam na przesłanie do mnie oferty sprzedażowej</label>
             </div>
             <button type="submit" class="customer-form__order">
                 <span class="product__price">Potwierdź zamówienie ${ sum } zł</span>

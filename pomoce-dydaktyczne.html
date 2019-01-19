@@ -9,8 +9,8 @@ permalink: /pomoce-dydaktyczne/index.html
     <div class="filter-wrapper">
     <ul id="filter" class="filter">
         <label class="filter__label">Kategorie</label>
-        {% for category in categories %}
-            <li class="filter__item" v-bind:class="[filters.includes('{{ category }}')? 'filter__item_selected' : '']" v-on:click.prevent="filter('{{category}}')"><a href="">{{ category }}</a></li>
+        {% for category in site.category %}
+            <li class="filter__item {{active}}" v-bind:class="[filters.includes('{{ category.title }}')? 'filter__item_selected' : '']" v-on:click.prevent="filter('{{category.title}}')"><a href="{{ category.url | relative_url }}">{{ category.title }}</a></li>
         {% endfor %}
     </ul>
     <div class="tiles">

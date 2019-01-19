@@ -1,6 +1,6 @@
-<a class="tiles__link" href="{{ include.content.url }}">
+<a class="tiles__link" href="{{ include.content.url | relative_url }}">
     <article class="tile tile_horizontal">
-        <div class="tile__image" style='background-image: url("{{ include.content.tileImage | absolute_url }}")'>
+        <div class="tile__image" style='background-image: url("{{ include.content.tileImage | relative_url }}")'>
         </div>
         <div class="tile__caption">
             <span class="tile__name">{{ include.content.title }}</span>

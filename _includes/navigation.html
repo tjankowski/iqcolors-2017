@@ -1,18 +1,18 @@
 <nav class="navigation">
-    <a href="{{ '/' | absolute_url }}" name="Home page"><img alt="logo" class="logo" src="{{ '/assets/images/logo3.svg' | absolute_url }}"></a>
+    <a href="{{ '/' | relative_url }}" name="Home page"><img alt="logo" class="logo" src="{{ '/assets/images/logo3.svg' | relative_url }}"></a>
     <div class="navigation__handler">
-        <img alt="Menu" class="navigation__menu" src="{{ '/assets/images/menu.svg' | absolute_url}}">
+        <img alt="Menu" class="navigation__menu" src="{{ '/assets/images/menu.svg' | relative_url}}">
         <span class="navigation__label">Menu</span>
     </div>
     <ul class="navigation__items">
-        <li class="navigation__item"><a href="{{ '/pomoce-dydaktyczne' | absolute_url}}">Pomoce dydaktyczne</a></li>
-        <li class="navigation__item"><a href="{{ '/blog' | absolute_url}}">Blog</a></li>
+        <li class="navigation__item"><a href="{{ '/pomoce-dydaktyczne' | relative_url}}">Pomoce dydaktyczne</a></li>
+        <li class="navigation__item"><a href="{{ '/blog' | relative_url}}">Blog</a></li>
         <li class="navigation__item"><a href="">O nas</a></li>
-        <li class="navigation__item"><a href="{{ '/kontakt' | absolute_url}}">Kontakt</a></li>
+        <li class="navigation__item"><a href="{{ '/kontakt' | relative_url}}">Kontakt</a></li>
         <span class="navigation__close">{% include close.html %}</span>
     </ul>
     {% unless include.noCart %}
-    <a href="{{ '/koszyk' | absolute_url}}" class="cart">
+    <a href="{{ '/koszyk' | relative_url}}" class="cart">
         {% include cart.html %}
     </a>
     {% endunless %}

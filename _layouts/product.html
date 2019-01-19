@@ -6,7 +6,7 @@
 <body id="body" class="no-background">
 {% include navigation.html %}
 <main>
-    <article id="product" class="product" data-id="{{page.title}}" data-name="{{page.title}}" data-url="{{page.url}}" data-price="{{page.price}}">
+    <article id="product" class="product" data-id="{{page.title}}" data-name="{{page.title}}" data-url="{{ page.url | relative_url }}" data-price="{{page.price}}">
         <header>
             <h1 class="product__header">{{ page.name }}</h1>
             <h2 class="product__sub-header">{{page.subName}}</h2>
@@ -15,10 +15,10 @@
             <span class="product__price">Zamów {{ page.price | money_without_currency }} zł</span>
             {% include arrow.html class="product__order-icon" %}
         </button>
-        <span class="product__cart" v-bind:class="{ product__cart_visible: product }"><a href="/koszyk.html" v-if="product">${product.count} w koszyku</a></span>
+        <span class="product__cart" v-bind:class="{ product__cart_visible: product }"><a href="{{ '/koszyk.html' | relative_url }}" v-if="product">${product.count} w koszyku</a></span>
         <div class="product__images">
             {% for image in page.images %}
-                <a href="{{ image | absolute_url }}" target="_blank" class="product__image_{{ forloop.index0 }} product__image"
+                <a href="{{ image | relative_url }}" target="_blank" class="product__image_{{ forloop.index0 }} product__image"
                    style='background-image: url("/{{ image }}")'></a>
             {% endfor %}
             <button class="product__image-navigation product__image-navigation_prev">
