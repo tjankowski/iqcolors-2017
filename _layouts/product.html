@@ -19,7 +19,7 @@
         <div class="product__images">
             {% for image in page.images %}
                 <a href="{{ image | relative_url }}" target="_blank" class="product__image_{{ forloop.index0 }} product__image"
-                   style='background-image: url("/{{ image }}")'></a>
+                   style='background-image: url("{{ image | relative_url }}")'></a>
             {% endfor %}
             <button class="product__image-navigation product__image-navigation_prev">
                 {% include arrow.html %}
