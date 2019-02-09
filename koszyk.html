@@ -44,6 +44,10 @@ permalink: /koszyk
                 Wartość całkowita
                 <span class="order__item-price order__item-price_summary">${ sum }</span>
             </li>
+            <li class="order__item order__item_info">
+                Cena nie zawiera kosztów dostawy.<br/>
+                Koszty dostawy zostaną przesłane w ofercie sprzedażowej po złożeniu zamówienia.
+            </li>
         </ul>
         <div v-if="Object.keys(order).length !== 0" class="customer-form">
             <h3>Dane kontaktowe</h3>
@@ -81,6 +85,10 @@ permalink: /koszyk
                 <span class="product__price">Potwierdź zamówienie ${ sum } zł</span>
                 {% include arrow.html class="product__order-icon" %}
             </button>
+            <span class="customer-form__info">
+                Cena nie zawiera kosztów dostawy.<br/>
+                Koszty dostawy zostaną przesłane w ofercie sprzedażowej po złożeniu zamówienia.
+            </span>
         </div>
     </form>
 

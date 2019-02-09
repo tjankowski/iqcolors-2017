@@ -277,6 +277,11 @@ const prevImageHandler = $('.product__image-navigation_prev');
 
 const productImages = $('.product__image');
 
+if(nextImageHandler.length > 0 && productImages.length < 2) {
+    nextImageHandler[0].style.display = 'none';
+    nextImageHandler[0].style.visibility = 'hidden';
+}
+
 nextImageHandler.on('click', function() {
     if(selectedImage < productImages.length-1) {
         selectedImage += 1;

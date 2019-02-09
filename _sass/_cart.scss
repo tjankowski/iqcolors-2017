@@ -25,6 +25,15 @@
             justify-content: flex-end;
             font-weight: bold;
         }
+
+        &_info {
+            font-family: "Alegreya Sans SC", sans-serif;
+            color: $pink;
+            justify-content: flex-end;
+            text-align: right;
+            margin-right: 1.5rem;
+            padding-top: 0;
+        }
     }
 
     &__item-name {
@@ -109,6 +118,14 @@
         cursor: pointer;
         z-index: 10;
     }
+
+    &__info {
+        display: block;
+        padding: 1rem .5rem;
+        color: $gray;
+        font-size: .875rem;
+        font-family: "Alegreya Sans SC", sans-serif;
+    }
 }
 
 .form-row {
@@ -144,7 +161,12 @@
 
         &__item {
             padding: 1rem;
+
+            &_info {
+                padding-top: 0;
+            }
         }
+
     }
 
     .customer-form {
@@ -222,10 +244,6 @@
 
     .order {
         order: 2;
-
-        &__item {
-            padding: 1rem;
-        }
     }
 
     .customer-form {
