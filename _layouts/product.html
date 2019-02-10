@@ -6,7 +6,7 @@
 <body id="body" class="no-background">
 {% include navigation.html %}
 <main>
-    <article id="product" class="product" data-id="{{page.title}}" data-name="{{page.title}}" data-url="{{ page.url | relative_url }}" data-price="{{page.price}}">
+    <article id="product" class="product" data-id="{{page.identifier}}" data-name="{{page.title}}" data-url="{{ page.url | relative_url }}" data-price="{{page.price}}">
         <header>
             <h1 class="product__header">{{ page.name }}</h1>
             <h2 class="product__sub-header">{{page.subName}}</h2>

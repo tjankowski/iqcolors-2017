@@ -1,0 +1,66 @@
+---
+layout: post
+title: "Witamy na nowej stronie"
+date: 2019-02-10
+tileImage: "/assets/images/posts/2019-02-10-nowa-strona/liczydlo_7.jpg"
+description: |
+    Od nowego roku zapraszamy nie tylko na naszą nową stronę.
+---
+{% assign atomy = site.products | where: "identifier", "26" | first %}
+{% assign uklad = site.products | where: "identifier", "24" | first %}
+<section>
+    <h1>Witamy na nowej stronie</h1>
+    <h2>Nowa strona</h2>
+    <p>
+    Od nowego roku ruszamy z odświeżoną stroną internetową i całą listą zmian oraz usprawnień. Przygotowaliśmy bardziej przejrzyste strony produktów oraz możliwość filtrowania po kategoriach.
+    Dodaliśmy możliwość składania zamówień w bardzo prosty sposób poprzez stronę, aby jak bardziej ułatwić wam ten
+    proces.
+    Oprócz całej gamy pomocy dydaktycznych postaraliśmy się także umieścić na stronie najbardziej potrzebne i
+    interesujące was informacje. Postanowiliśmy spróbować swoich sił w prowadzeniu małego bloga. Mamy spory zapał, ale dopiero zaczynamy więc prosimy
+    o waszą wyrozumiałość :)
+    </p>
+
+    <h2>Rebranding</h2>
+    <p>
+        Postanowiliśmy także dokonać zmian w naszej marce IQ Colors, tak aby bardziej odzwierciedlała nasze wartości.
+        Zaczynając od logo, bardziej czytelnej
+        typografii, poprzez wprowadzenie żywszych i&nbsp;przyjemniejszych kolorów, aż do ujednolicenia komunikacji.
+        Jednak zmiany
+        nie dotyczą tylko i&nbsp;wyłącznie naszej identyfikacji
+        wizualnej, chcielibyśmy przedstawić wam naszą historię oraz&nbsp;nawiązać wspólny dialog.
+    </p>
+    <p>
+        Proces rebrandingu cały czas jeszcze trwa. Ciągle jesteśmy w&nbsp;trakcie dokonywania małych zmian i&nbsp;korekt,
+        dlatego
+        możecie spodziewać się zmian np.&nbsp;na naszej stronie internetowej.
+    </p>
+    <p>
+        W&nbsp;związku z&nbsp;wprowadzonymi zmianami będziemy pracować także nad odświeżeniem części istniejących
+        produktów.
+    </p>
+    <h2>Media społecznościowe</h2>
+    <p>
+        Od teraz znajdziecie nas również w mediach społecznościowych, na <a target="_blank" href="https://www.facebook.com/iqcolors">Facebooku</a>
+        oraz <a target="_blank" href="https://www.instagram.com/iqcolors/">Instagramie</a>. Dopiero zaczynamy
+        swoją przygodę z tymi platformami, więc bądźcie wyrozumiali. Zapraszamy do obserwowania naszych profili,
+        postaramy
+        się publikować regularnie i ciekawie.
+    </p>
+    <h2>Nowe produkty</h2>
+    <p>
+    Do naszej oferty pomocy dołączyły również nowe produkty:
+    <ul>
+        <li><a href="{{ atomy.url | relative_url }}">Atomy</a></li>
+        <li><a href="{{ uklad.url | relative_url }}">Układ okresowy pierwiastków</a></li>
+    </ul>
+    </p>
+</section>
+<div class="section__line section__line_margin"></div>
+<div class="tiles">
+    <div>
+        <div class="tiles__row">
+            {% include tile_vertical.html content=atomy %}
+            {% include tile_vertical.html content=uklad %}
+        </div>
+    </div>
+</div>

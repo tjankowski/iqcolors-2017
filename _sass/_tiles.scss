@@ -74,6 +74,7 @@
             overflow: hidden;
             font-size: .8rem;
             padding: 0;
+            align-items: flex-start;
         }
 
         .tile__name {
@@ -152,7 +153,6 @@
                 max-width: 320px;
                 flex-grow: 2;
                 flex-direction: column;
-                align-items: center;
             }
 
             .tile__name {

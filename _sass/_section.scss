@@ -4,6 +4,10 @@
         height: 1px;
         width: 75%;
         background-image: linear-gradient(to right, #4800AC, #FF0080);
+
+        &_margin {
+            margin: 4rem 0 2rem;
+        }
     }
 
     &__header {
@@ -21,6 +25,10 @@
             height: 1px;
             width: 65%;
             background-image: linear-gradient(to right, #4800AC, #FF0080);
+
+            &_margin {
+                margin: 4rem 0 2rem;
+            }
         }
 
         &__header {

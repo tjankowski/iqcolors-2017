@@ -1,0 +1,12 @@
+<div class="author">
+    <div class="author__image" style='background-image: url("{{ include.content.tileImage | relative_url }}")'>
+    </div>
+    <div class="author__caption">
+        <span class="author__name">{{ include.content.title }}</span>
+        {% if include.content.description %}
+        <p class="author__description">
+            {{ include.content.description }}
+        </p>
+        {% endif %}
+    </div>
+</div>
