@@ -13,6 +13,7 @@ _site/
 Gemfile.lock
 
 # Files
+.idea/
 .analysis
 .DS_Store
 *.swp
