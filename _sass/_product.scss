@@ -89,6 +89,10 @@ $transformTransition: transform 2s ease;
          align-items: center;
          cursor: pointer;
          z-index: 10;
+
+         &_unavailable {
+            text-transform: uppercase;
+        }
     }
 
     &__order_done {

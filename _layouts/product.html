@@ -11,10 +11,16 @@
             <h1 class="product__header">{{ page.name }}</h1>
             <h2 class="product__sub-header">{{page.subName}}</h2>
         </header>
+        {% if page.unavailable %}
+        <div class="product__order product__order_unavailable">
+            <span class="product__price">Produkt niedostępny</span>
+        </div>
+        {% else %}
         <button class="product__order" v-bind:class="{ product__order_done: ordered }" v-on:click="order">
             <span class="product__price">Zamów {{ page.price | money_without_currency }} zł</span>
             {% include arrow.html class="product__order-icon" %}
         </button>
+        {% endif %}
         <span class="product__cart" v-bind:class="{ product__cart_visible: product }"><a href="{{ '/koszyk.html' | relative_url }}" v-if="product">${product.count} w koszyku</a></span>
         <div class="product__images">
             {% for image in page.images %}
