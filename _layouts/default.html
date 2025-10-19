@@ -2,6 +2,35 @@
 <html lang="pl">
 <head>
     {% include head.html %}
+    
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IQ Colors",
+        "url": "{{ site.url | default: 'https://iqcolors.com' }}",
+        "logo": "{{ '/assets/images/logo.png' | absolute_url }}",
+        "description": "{{ site.description }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Staszica 2A / 3",
+            "addressLocality": "Kąty Wrocławskie",
+            "postalCode": "55-080",
+            "addressCountry": "PL"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+48-606-836-674",
+            "contactType": "customer service",
+            "email": "kontakt@iqcolors.com"
+        },
+        "sameAs": [
+            "https://www.facebook.com/iqcolors",
+            "https://www.instagram.com/iqcolors"
+        ]
+    }
+    </script>
 </head>
 <body id="body">
 {% include navigation.html %}
