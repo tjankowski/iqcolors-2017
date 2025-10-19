@@ -8,9 +8,26 @@
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="IQ Colors">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IQ Colors</title>
+<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{% if page.layout == 'product' %}product{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{% if page.tileImage %}{{ page.tileImage | absolute_url }}{% else %}{{ '/assets/images/logo.png' | absolute_url }}{% endif %}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ page.url | absolute_url }}">
+<meta property="twitter:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="twitter:image" content="{% if page.tileImage %}{{ page.tileImage | absolute_url }}{% else %}{{ '/assets/images/logo.png' | absolute_url }}{% endif %}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 
 <!-- Disable tap highlight on IE -->
 <meta name="msapplication-tap-highlight" content="no">

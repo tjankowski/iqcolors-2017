@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://iqcolors.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /_site/
+Disallow: /node_modules/
+Disallow: /_drafts/
+
+# Allow important pages
+Allow: /pomoce-dydaktyczne/
+Allow: /produkt/
+Allow: /kontakt
+Allow: /dostawa
+Allow: /o-nas

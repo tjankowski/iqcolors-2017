@@ -18,8 +18,8 @@ email: kontakt@iqcolors.com
 description: > # this means to ignore newlines until "baseurl:"
   IQ Colors - producent pomocy dydaktycznych dla szkół i przedszkoli.
   Produkty do nauki i ćwiczenia matematyki, polskiego, muzyki, przyrody oraz kilku innych dziedzin.
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://iqcolors.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
